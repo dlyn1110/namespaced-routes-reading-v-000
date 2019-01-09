@@ -4512,3 +4512,13 @@ ActionController::RoutingError (No route matches [GET] "/stats"):
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2019-01-08 00:00:00.000000"], ["updated_at", "2019-01-09 19:24:18.051166"], ["id", 6]]
   [1m[35m (2.2ms)[0m  commit transaction
+
+
+Started GET "/admin/stats" for 104.162.89.131 at 2019-01-09 19:27:51 +0000
+Cannot render console from 104.162.89.131! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered stats/index.html.erb within layouts/application (3.5ms)
